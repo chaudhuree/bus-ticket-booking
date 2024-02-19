@@ -19,6 +19,7 @@ let selectedSeatsEl = document.getElementById("selected-seats");
 let couponCodeBoxEl = document.getElementById("coupon-code-box");
 let couponCodeEl = document.getElementById("coupon-code-input");
 const nextBtn = document.getElementById("next-btn");
+const phoneInput = document.getElementById("phone-number");
 
 // initial value set
 totalSeatEl.textContent = totalSeat;
@@ -124,15 +125,13 @@ function calculateTotalPrice() {
 
 // apply coupon
 function applyCoupon() {
-  // const couponCodeInput = document.getElementById('couponCode');
   const couponCode = couponCodeEl.value.trim();
 
-  if (couponCode === "Couple 20" || couponCode === "New15") {
+  if (couponCode === "Couple 20" || couponCode === "NEW15") {
     const discountPercentage = couponCode === "Couple 20" ? 20 : 15;
     discountPrice = (totalPrice * discountPercentage) / 100;
 
     // Show the discount section
-    // disccountPriceBoxEl.style.display = 'block';
     disccountPriceBoxEl.classList.remove("hidden");
     discountPriceEl.textContent = discountPrice;
 
@@ -140,14 +139,7 @@ function applyCoupon() {
     grandtotal = totalPrice - discountPrice;
     grandTotalEl.textContent = grandtotal;
 
-    // totalPrice -= discountPrice;
-    // document.getElementById('totalPrice').textContent = totalPrice;
-
-    // couponCodeEl.disabled = true;
-
-    // Hide the coupon button after applying a valid coupon
-    // document.querySelector('button[onclick="applyCoupon()"]').style.display = 'none';
-    // couponCodeInput.style.display = 'none';
+    // Hide the coupon code box
     couponCodeBoxEl.classList.add("hidden");
   } else {
     alert('Invalid coupon code. Please enter "Couple 20" or "New15".');
@@ -166,23 +158,18 @@ function purchase() {
 
 // select seat
 function selectSeat(seatNumber) {
-  // console.log('seatNumber', seatNumber);
-
   const seatBtn = document.getElementById(`seat${seatNumber}`);
-  // console.log('seatBtn', seatBtn);
   const isSeatSelected = seatBtn.classList.contains("selected");
-  // console.log('isSeatSelected', isSeatSelected);
 
   if (!isSeatSelected) {
-    if (selectedSeats.length < maxTicketsPerUser) {
-      // seatBtn.classList.add('selected');
-      seatBtn.classList.remove("bg-[#F7F8F8]");
-      seatBtn.classList.add("selected", "bg-[#1dd100]", "text-white");
+      if (selectedSeats.length < maxTicketsPerUser) {
+          seatBtn.classList.remove("bg-[#F7F8F8]","text-[#03071280]");
+          seatBtn.classList.add("selected", "bg-[#1dd100]", "text-white");
 
-      updateSelectedSeatsList(seatNumber, true);
-    } else {
-      alert("You can only select up to 4 seats at a time.");
-    }
+          updateSelectedSeatsList(seatNumber, true);
+      } else {
+          alert("You can only select up to 4 seats at a time.");
+      }
   }
 
   calculateTotalPrice();
@@ -190,15 +177,17 @@ function selectSeat(seatNumber) {
   // Enable coupon code field if 4 tickets are selected
   couponCodeEl.disabled = selectedSeats.length !== maxTicketsPerUser;
 
-  // Enable next button if at least one seat is selected
-  nextBtn.disabled = selectedSeats.length === 0;
+  // Enable next button if at least one seat is selected and phoneInput is not empty
+  nextBtn.disabled = selectedSeats.length === 0 || phoneInput.value.trim() === "";
 
   // Show the apply coupon button after deselecting a seat if the selected seats are less than 4
   if (selectedSeats.length < maxTicketsPerUser) {
-    document.querySelector('button[onclick="applyCoupon()"]').style.display =
-      "block";
+      document.querySelector('button[onclick="applyCoupon()"]').style.display = "block";
   }
 }
+phoneInput.addEventListener("input", () => {
+  nextBtn.disabled = selectedSeats.length === 0 || phoneInput.value.trim() === "";
+});
 // update selected seats list
 function updateSelectedSeatsList(seatNumber, isSelected) {
   // table
@@ -207,34 +196,33 @@ function updateSelectedSeatsList(seatNumber, isSelected) {
   const seatIndex = selectedSeats.indexOf(seatNumber);
   // if index is -1 then seat is not selected
   if (isSelected) {
-      if (seatIndex === -1) {
-          selectedSeats.push(seatNumber);
-          // update the seat list with correct numbering
-          totalSeatEl.textContent = totalSeat - selectedSeats.length;
-          selectedSeatsEl.textContent = selectedSeats.length;
-          grandTotalEl.textContent = selectedSeats.length * ticketPrice;
-
-      }
+    if (seatIndex === -1) {
+      selectedSeats.push(seatNumber);
+      // update the seat list with correct numbering
+      totalSeatEl.textContent = totalSeat - selectedSeats.length;
+      selectedSeatsEl.textContent = selectedSeats.length;
+      grandTotalEl.textContent = selectedSeats.length * ticketPrice;
+    }
   } else {
-      if (seatIndex !== -1) {
-          selectedSeats.splice(seatIndex, 1);
-          // update the seat list with correct numbering
-          totalSeatEl.textContent = totalSeat - selectedSeats.length;
-          selectedSeatsEl.textContent = selectedSeats.length;
-          grandTotalEl.textContent = selectedSeats.length * ticketPrice;
-      }
+    if (seatIndex !== -1) {
+      selectedSeats.splice(seatIndex, 1);
+      // update the seat list with correct numbering
+      totalSeatEl.textContent = totalSeat - selectedSeats.length;
+      selectedSeatsEl.textContent = selectedSeats.length;
+      grandTotalEl.textContent = selectedSeats.length * ticketPrice;
+    }
   }
 
   // Update the seat list with correct numbering
   seatList.innerHTML = selectedSeats
-      .map(
-          (seat, index) => `
+    .map(
+      (seat, index) => `
               <tr class="border-0">
                   <td class="inter text-gray-500">${seat}</td>
                   <td class="inter text-gray-500">Economy</td>
                   <td class="inter text-gray-500">${ticketPrice}</td>
               </tr>
           `
-      )
-      .join("");
+    )
+    .join("");
 }

@@ -19,6 +19,9 @@
       type="text/css"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .sc-container {
         max-width: 81.6% !important;
         margin: 0 auto !important;
@@ -39,13 +42,13 @@
         background: #1dd100;
       }
       .selected {
-            background-color: #1dd100;
-            color: white;
-        }
-        #discountSection {
-            display: none;
-            margin-top: 10px;
-        }
+        background-color: #1dd100;
+        color: white;
+      }
+      #discountSection {
+        display: none;
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body class="raleway">
@@ -126,7 +129,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a
+          <a href="#ticketbuy"
             class="btn text-[#1DD100] border-[#1DD100] font-bold text-xl max-md:text-lg max-md:font-medium"
             >Bus <img src="images/greenbus.svg" alt=""
           /></a>
@@ -148,11 +151,12 @@
               Embark on Unforgettable Journeys: Explore, Discover, and Create
               Timeless Memories with Our Travel Experiences.
             </p>
-            <button
+            <a
+              href="#ticketbuy"
               class="btn green-primary-bg border-0 font-bold text-xl hover:bg-green-500 hover:text-white max-md:font-semibold max-md:text-lg"
             >
               Buy Tickets
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -312,11 +316,12 @@
       </div>
       <!-- main features area -->
       <div
+        
         class="ticket-booking-zone rounded-3xl mt-28 border-t-2 border-[#1DD100] bg-[#F7F8F8]"
       >
         <div class="sc-container pt-28">
           <div class="heading">
-            <h1 class="text-[40px] font-bold text-center mb-6">SC Paribahan</h1>
+            <h1 id="ticketbuy" class="text-[40px] font-bold text-center mb-6">SC Paribahan</h1>
             <p class="inter text-lg leading-8 mx-auto max-w-2xl text-center">
               Discover the World Anew: Your Passport to Extraordinary Adventures
               and Seamless Travel Experiences Awaits!
@@ -449,11 +454,13 @@
                 <img src="images/lines/line-left.svg" alt="dashed line" />
               </div>
               <div class="flex justify-end items-center mb-4">
-                <div class="px-10 py-3 rounded-xl bg-[#03071219]"><img src="./images/steering.svg" alt="steering"></div>
+                <div class="px-10 py-3 rounded-xl bg-[#03071219]">
+                  <img src="./images/steering.svg" alt="steering" />
+                </div>
               </div>
 
               <!-- seat plan zone -->
-              <div id="seats-container" >
+              <div id="seats-container">
                 <!-- first row -->
                 <!-- <div class="row flex gap-6 items-center">
                   <div class="row-label  inter text-lg font-medium text-[#03071280]">A</div>
@@ -513,7 +520,6 @@
                         <td class="inter text-gray-500">Economy</td>
                         <td class="inter text-gray-500">550</td>
                       </tr>
-
                     </tbody>
                     <tfoot>
                       <!-- result row -->
@@ -521,7 +527,7 @@
                         <td class="inter text-black font-medium text-base">
                           Total Price
                         </td>
-  
+
                         <td
                           colspan="2"
                           class="inter text-black font-medium text-base text-right"
@@ -534,7 +540,7 @@
                         <td class="inter text-black font-medium text-base">
                           Discount Price
                         </td>
-  
+
                         <td
                           colspan="2"
                           class="inter text-black font-medium text-base text-right"
@@ -542,7 +548,6 @@
                           BDT <span id="discount-price">330</span>
                         </td>
                       </tr>
-
                     </tfoot>
                   </table>
                   <!-- coupon code field -->
@@ -557,8 +562,9 @@
                         placeholder="Search"
                         id="coupon-code-input"
                       />
-                      <button 
-                        class="py-[8px] px-[18px] text-white font-semibold inter rounded-lg bg-[#1DD100] " onclick="applyCoupon()"
+                      <button
+                        class="py-[8px] px-[18px] text-white font-semibold inter rounded-lg bg-[#1DD100]"
+                        onclick="applyCoupon()"
                       >
                         Apply
                       </button>
@@ -595,6 +601,7 @@
                     >Phone Number<sup>*</sup></label
                   >
                   <input
+                    id="phone-number"
                     type="number"
                     class="input input-bordered"
                     placeholder="Enter your phone number"
@@ -610,7 +617,9 @@
                     placeholder="Enter your email id"
                   />
                 </div>
-                <button id="next-btn" onclick="purchase()"
+                <button
+                  id="next-btn"
+                  onclick="purchase()"
                   class="btn btn-wide bg-[#1dd100] w-full font-extrabold text-xl text-white rounded-xl hover:bg-green-400"
                 >
                   Next
@@ -685,8 +694,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- custom js -->
     <script src="script.js"></script>
-    <script>
-      
-    </script>
+    <script></script>
   </body>
 </html>

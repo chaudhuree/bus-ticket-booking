@@ -124,7 +124,8 @@ function calculateTotalPrice() {
 }
 
 // apply coupon
-function applyCoupon() {
+function applyCoupon(e) {
+  e.preventDefault();
   const couponCode = couponCodeEl.value.trim();
 
   if (couponCode === "Couple 20" || couponCode === "NEW15") {
@@ -142,20 +143,23 @@ function applyCoupon() {
     // Hide the coupon code box
     couponCodeBoxEl.classList.add("hidden");
   } else {
-    alert('Invalid coupon code. Please enter "Couple 20" or "New15".');
+    alert('Invalid coupon code. Please enter "Couple 20" or "NEW15".');
   }
 }
 
 // ticket purchase
-function purchase() {
-  if (selectedSeats.length === 0) {
-    alert("Please select at least one seat.");
-    return;
-  }
+// function purchase() {
+//   if (selectedSeats.length === 0) {
+//     alert("Please select at least one seat.");
+//     return;
+//   }
 
-  alert("Purchase done!");
+//   alert("Purchase done!");
+// }
+
+function handleForm(e) {
+  e.preventDefault();
 }
-
 // select seat
 function selectSeat(seatNumber) {
   const seatBtn = document.getElementById(`seat${seatNumber}`);
@@ -185,7 +189,8 @@ function selectSeat(seatNumber) {
       document.querySelector('button[onclick="applyCoupon()"]').style.display = "block";
   }
 }
-phoneInput.addEventListener("input", () => {
+phoneInput.addEventListener("input", (e) => {
+  e.preventDefault();
   nextBtn.disabled = selectedSeats.length === 0 || phoneInput.value.trim() === "";
 });
 // update selected seats list

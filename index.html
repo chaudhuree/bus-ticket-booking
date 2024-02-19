@@ -19,10 +19,10 @@
       type="text/css"
     />
     <style>
-      /* body {
+      .sc-container {
         max-width: 81.6% !important;
         margin: 0 auto !important;
-      } */
+      }
       .inter {
         font-family: "Inter", sans-serif;
       }
@@ -42,7 +42,7 @@
   </head>
   <body class="raleway">
     <!-- header -->
-    <header class="container mx-auto">
+    <header class="container mx-auto sc-container">
       <!-- navbar -->
       <div class="navbar bg-base-100 mb-8 mt-14 px-0">
         <div class="navbar-start">
@@ -196,114 +196,45 @@
       </div>
     </header>
     <!-- main -->
-    <main class="container mx-auto">
-      <!-- offers section -->
-      <div class="offers mx-auto mb-28">
-        <h1 class="text-[40px] font-bold text-center mt-3 mb-12">
-          Best offers for you
-        </h1>
-        <section class="offer-cards">
-          <section class="grid lg:grid-cols-2 gap-4">
-            <section
-              class="flex w-full flex-grow items-center justify-center py-4"
+
+    <!-- footer -->
+    <footer class="bg-black py-[120px]">
+      <div class="sc-container">
+        <!-- footer top -->
+        <div class="text-container flex justify-between items-center">
+          <div class="footer-left-box flex flex-col gap-4">
+            <h1 class="text-4xl font-extrabold text-white">SC Paribahan</h1>
+            <p
+              class="text-gray-300 max-w-md leading-8 text-lg font-normal inter"
             >
-              <div class="flex h-[220px] w-full max-w-3xl text-zinc-900">
-                <!-- left -->
-                <div
-                  class="flex flex-grow h-full flex-col items-center justify-center rounded-l-3xl px-8 bg-[#FFBF0F]"
-                >
-                  <h1 class="text-[40px] font-black leading-9 inter">
-                    15% OFF
-                  </h1>
-                  <p class="text-xl font-semibold leading-9 inter">
-                    on your next purchase
-                  </p>
-                  <p class="text-lg font-medium leading-9 text-gray-600">
-                    use by January 2024
-                  </p>
-                </div>
-                <!-- border -->
-                <div
-                  class="relative flex h-full flex-col items-center justify-between border-2 border-dashed border-white bg-[#FFBF0F]"
-                >
-                  <div
-                    class="absolute -top-5 h-8 w-8 rounded-full bg-white"
-                  ></div>
-                  <div
-                    class="absolute -bottom-5 h-8 w-8 rounded-full bg-white"
-                  ></div>
-                </div>
-                <!-- right -->
-                <div
-                  class="flex w-1/3 h-full flex-col rounded-r-3xl bg-[#FFBF0F] px-10 py-8"
-                >
-                  <div class="flex justify-center items-center flex-col h-full">
-                    <h1 class="leading-[180%] text-[32px] font-bold">NEW15</h1>
-                    <p class="text-lg font-medium leading-9 text-gray-600">
-                      Coupon Code
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section
-              class="flex w-full flex-grow items-center justify-center py-4"
-            >
-              <div class="flex h-[220px] w-full max-w-3xl text-zinc-900">
-                <!-- left -->
-                <div
-                  class="flex flex-grow h-full flex-col items-center justify-center rounded-l-3xl px-8 bg-[#F78C9C]"
-                >
-                  <h1 class="text-[40px] inter font-black leading-9">
-                    20% OFF
-                  </h1>
-                  <p class="text-xl inter font-semibold leading-9">
-                    on your next purchase
-                  </p>
-                  <p class="text-lg inter font-medium leading-9 text-gray-600">
-                    use by January 2024
-                  </p>
-                </div>
-                <!-- border -->
-                <div
-                  class="relative flex h-full flex-col items-center justify-between border-2 border-dashed border-white bg-[#F78C9C]"
-                >
-                  <div
-                    class="absolute -top-5 h-8 w-8 rounded-full bg-white"
-                  ></div>
-                  <div
-                    class="absolute -bottom-5 h-8 w-8 rounded-full bg-white"
-                  ></div>
-                </div>
-                <!-- right -->
-                <div
-                  class="flex h-full w-1/3 flex-col rounded-r-3xl bg-[#F78C9C] px-10 py-8"
-                >
-                  <div class="flex justify-center items-center flex-col h-full">
-                    <h1
-                      class="leading-[180%] text-[32px] font-bold whitespace-nowrap"
-                    >
-                      Couple 20
-                    </h1>
-                    <p class="text-lg font-medium leading-9 text-gray-600">
-                      Coupon Code
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </section>
-        </section>
-        <div class="grid items-center justify-center mt-14">
-          <div
-            class="btn btn-outline btn-outline-[#11dd100] raleway text-xl font-bold text-[#1DD100] hover:bg-green-500 hover:border-0 max-md:font-semibold max-md:text-lg"
-          >
-            See All Offers
+              SC Paribahan is a leading online bus ticket booking platform in
+              Bangladesh.
+            </p>
+          </div>
+          <div class="footer-right-box flex flex-col gap-5">
+            <h3 class="text-white text-xl raleway font-semibold">
+              Download out app
+            </h3>
+            <img src="./images/gp.svg" alt="play button" />
           </div>
         </div>
+        <!-- line -->
+        <div class="my-12">
+          <img src="./images/Line-1.svg" alt="" />
+        </div>
+        <!-- footer bottom -->
+        <div class="footer-bottom flex justify-between items-center">
+          <p class="inter text-[#FFFFFFB3] font-normal text-base">@all rights reserved, E-Ticket services limited.2024</p>
+          <div class="left-nav flex gap-8 items-center">
+            <a class="text-white text-base font-medium transition-all duration-300 ease-in-out hover:text-[#1DD100]">Terms & condition</a>
+            <a class="text-white text-base font-medium transition-all duration-300 ease-in-out hover:text-[#1DD100]">Return & refund policy</a>
+            <a class="text-white text-base font-medium transition-all duration-300 ease-in-out hover:text-[#1DD100]">Privacy policy</a>
+            
+          </div>
+        </div>
+
       </div>
-    </main>
-    <!-- footer -->
+    </footer>
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- daisy ui -->

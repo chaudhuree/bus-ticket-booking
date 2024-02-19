@@ -38,6 +38,14 @@
       .green-primary-bg {
         background: #1dd100;
       }
+      .selected {
+            background-color: #1dd100;
+            color: white;
+        }
+        #discountSection {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
   </head>
   <body class="raleway">
@@ -338,7 +346,7 @@
                       <a
                         class="btn text-[#1DD100] border-[#1DD100] font-medium text-lg max-md:text-sm max-md:font-normal inter"
                         ><img src="images/seat.svg" alt="seat" />
-                        <span id="total-seat">40</span> Seats left</a
+                        <span id="total-seat">0</span> Seats left</a
                       >
                     </div>
                   </heading>
@@ -484,10 +492,10 @@
                         <th class="inter font-medium text-base text-black">
                           Seat
                           <div
-                            id="selectedSeats"
+                            id="selected-seats"
                             class="badge bg-[#1DD100] text-white"
                           >
-                            2
+                            0
                           </div>
                         </th>
                         <th class="inter font-medium text-base text-black">
@@ -498,7 +506,7 @@
                         </th>
                       </tr>
                     </thead>
-                    <tbody id="listofselectedtickets">
+                    <tbody id="list-of-selected-tickets">
                       <!-- row 1 -->
                       <tr class="border-0">
                         <td class="inter text-gray-500">C2</td>
@@ -506,46 +514,51 @@
                         <td class="inter text-gray-500">550</td>
                       </tr>
 
+                    </tbody>
+                    <tfoot>
                       <!-- result row -->
                       <tr class="border-t-2">
                         <td class="inter text-black font-medium text-base">
                           Total Price
                         </td>
-
+  
                         <td
                           colspan="2"
                           class="inter text-black font-medium text-base text-right"
                         >
-                          BDT <span id="totalprice">1100</span>
+                          BDT <span id="total-price">1100</span>
                         </td>
                       </tr>
                       <!-- discount price -->
-                      <tr id="discountpricenotation" class="mt-4 hidden">
+                      <tr id="discount-price-notation" class="mt-4 hidden">
                         <td class="inter text-black font-medium text-base">
                           Discount Price
                         </td>
-
+  
                         <td
                           colspan="2"
                           class="inter text-black font-medium text-base text-right"
                         >
-                          BDT <span id="discountprice">330</span>
+                          BDT <span id="discount-price">330</span>
                         </td>
                       </tr>
-                    </tbody>
+
+                    </tfoot>
                   </table>
                   <!-- coupon code field -->
-                  <div id="couponcodebox">
+                  <div id="coupon-code-box">
                     <label
                       class="input input-bordered pl-[22px] pr-1 py-2 flex items-center gap-2"
                     >
                       <input
+                        disabled
                         type="text"
                         class="grow active:outline-none focus:outline-none"
                         placeholder="Search"
+                        id="coupon-code-input"
                       />
-                      <button
-                        class="py-[8px] px-[18px] text-white font-semibold inter rounded-lg bg-[#1DD100]"
+                      <button 
+                        class="py-[8px] px-[18px] text-white font-semibold inter rounded-lg bg-[#1DD100] " onclick="applyCoupon()"
                       >
                         Apply
                       </button>
@@ -560,7 +573,7 @@
                       Grand Total
                     </p>
                     <p class="inter text-black font-medium text-base">
-                      BDT <span>1100</span>
+                      BDT <span id="grand-total">1100</span>
                     </p>
                   </div>
                 </div>
@@ -597,7 +610,7 @@
                     placeholder="Enter your email id"
                   />
                 </div>
-                <button
+                <button id="next-btn" onclick="purchase()"
                   class="btn btn-wide bg-[#1dd100] w-full font-extrabold text-xl text-white rounded-xl hover:bg-green-400"
                 >
                   Next

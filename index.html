@@ -11,25 +11,304 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-   
+
     <!-- daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <style>
+      /* body {
+        max-width: 81.6% !important;
+        margin: 0 auto !important;
+      } */
       .inter {
         font-family: "Inter", sans-serif;
       }
       .raleway {
         font-family: "Raleway", sans-serif;
       }
+      .gray-primary {
+        color: #03071270;
+      }
+      .green-primary {
+        color: #1dd100;
+      }
+      .green-primary-bg {
+        background: #1dd100;
+      }
     </style>
   </head>
-  <body>
-    
-     <!-- tailwind css -->
-     <script src="https://cdn.tailwindcss.com"></script>
-     <!-- daisy ui -->
-     <script src="https://cdn.tailwindcss.com"></script>
-     <!-- custom js -->
-     <script src="script.js"></script>
+  <body class="raleway">
+    <!-- header -->
+    <header class="container mx-auto">
+      <!-- navbar -->
+      <div class="navbar bg-base-100 mb-8 mt-14 px-0">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="gap-8 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                  >Destination</a
+                >
+              </li>
+              <li>
+                <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                  >Search</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a class="text-4xl font-extrabold max-md:text-xl max-md:font-semibold"
+            >SC-Paribahan</a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="gap-16 menu-horizontal px-1">
+            <li>
+              <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                >About</a
+              >
+            </li>
+            <li>
+              <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                >Destination</a
+              >
+            </li>
+            <li>
+              <a class="gray-primary text-lg font-medium hover:text-[#1DD100]"
+                >Search</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            class="btn text-[#1DD100] border-[#1DD100] font-bold text-xl max-md:text-lg max-md:font-medium"
+            >Bus <img src="images/greenbus.svg" alt=""
+          /></a>
+        </div>
+      </div>
+      <!-- hero -->
+      <div
+        class="hero bg-white min-h-screen rounded-2xl"
+        style="background-image: url(./images/banner.png)"
+      >
+        <div class="hero-overlay rounded-2xl bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="">
+            <h1 class="mb-5 text-6xl font-extrabold text-white leading-[86px]">
+              End-to-End Travel with <br />
+              <span class="green-primary">SC Paribahan</span>
+            </h1>
+            <p class="mb-5 max-w-md mx-auto leading-7 inter">
+              Embark on Unforgettable Journeys: Explore, Discover, and Create
+              Timeless Memories with Our Travel Experiences.
+            </p>
+            <button
+              class="btn green-primary-bg border-0 font-bold text-xl hover:bg-green-500 hover:text-white max-md:font-semibold max-md:text-lg"
+            >
+              Buy Tickets
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- stats -->
+      <div
+        class="flex justify-center items-center gap-6 transform -translate-y-[70px]"
+      >
+        <div
+          class="bg-white users rounded-3xl px-8 py-9 border-b-2 border-[#1dd100]"
+        >
+          <div class="flex gap-4 justify-center items-center">
+            <img src="./images/people.svg" alt="customers-icon" />
+            <div class="inter">
+              <h2 class="text-4xl font-bold">500k+</h2>
+              <p class="text-lg font-normal text-[rgba(3, 7, 18, 0.6)]">
+                Registered users
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white sold rounded-3xl px-8 py-9 border-b-2 border-[#1dd100]"
+        >
+          <div class="flex gap-4 justify-center items-center">
+            <img src="./images/ticketcoupon.svg" alt="coupon" />
+            <div class="inter">
+              <h2 class="text-4xl font-bold">1.7 lacks</h2>
+              <p class="text-lg font-normal text-[rgba(3, 7, 18, 0.6)]">
+                Tickets sold
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white partners rounded-3xl px-8 py-9 border-b-2 border-[#1dd100]"
+        >
+          <div class="flex gap-4 justify-center items-center">
+            <img src="./images/stoppage.svg" alt="stoppage" />
+            <div class="inter">
+              <h2 class="text-4xl font-bold">80K+</h2>
+              <p class="text-lg font-normal text-[rgba(3, 7, 18, 0.6)]">
+                Rental partners
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="sold"></div>
+        <div class="partners"></div> -->
+      </div>
+    </header>
+    <!-- main -->
+    <main class="container mx-auto">
+      <!-- offers section -->
+      <div class="offers mx-auto mb-28">
+        <h1 class="text-[40px] font-bold text-center mt-3 mb-12">
+          Best offers for you
+        </h1>
+        <section class="offer-cards">
+          <section class="grid lg:grid-cols-2 gap-4">
+            <section
+              class="flex w-full flex-grow items-center justify-center py-4"
+            >
+              <div class="flex h-[220px] w-full max-w-3xl text-zinc-900">
+                <!-- left -->
+                <div
+                  class="flex flex-grow h-full flex-col items-center justify-center rounded-l-3xl px-8 bg-[#FFBF0F]"
+                >
+                  <h1 class="text-[40px] font-black leading-9 inter">
+                    15% OFF
+                  </h1>
+                  <p class="text-xl font-semibold leading-9 inter">
+                    on your next purchase
+                  </p>
+                  <p class="text-lg font-medium leading-9 text-gray-600">
+                    use by January 2024
+                  </p>
+                </div>
+                <!-- border -->
+                <div
+                  class="relative flex h-full flex-col items-center justify-between border-2 border-dashed border-white bg-[#FFBF0F]"
+                >
+                  <div
+                    class="absolute -top-5 h-8 w-8 rounded-full bg-white"
+                  ></div>
+                  <div
+                    class="absolute -bottom-5 h-8 w-8 rounded-full bg-white"
+                  ></div>
+                </div>
+                <!-- right -->
+                <div
+                  class="flex w-1/3 h-full flex-col rounded-r-3xl bg-[#FFBF0F] px-10 py-8"
+                >
+                  <div class="flex justify-center items-center flex-col h-full">
+                    <h1 class="leading-[180%] text-[32px] font-bold">NEW15</h1>
+                    <p class="text-lg font-medium leading-9 text-gray-600">
+                      Coupon Code
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section
+              class="flex w-full flex-grow items-center justify-center py-4"
+            >
+              <div class="flex h-[220px] w-full max-w-3xl text-zinc-900">
+                <!-- left -->
+                <div
+                  class="flex flex-grow h-full flex-col items-center justify-center rounded-l-3xl px-8 bg-[#F78C9C]"
+                >
+                  <h1 class="text-[40px] inter font-black leading-9">
+                    20% OFF
+                  </h1>
+                  <p class="text-xl inter font-semibold leading-9">
+                    on your next purchase
+                  </p>
+                  <p class="text-lg inter font-medium leading-9 text-gray-600">
+                    use by January 2024
+                  </p>
+                </div>
+                <!-- border -->
+                <div
+                  class="relative flex h-full flex-col items-center justify-between border-2 border-dashed border-white bg-[#F78C9C]"
+                >
+                  <div
+                    class="absolute -top-5 h-8 w-8 rounded-full bg-white"
+                  ></div>
+                  <div
+                    class="absolute -bottom-5 h-8 w-8 rounded-full bg-white"
+                  ></div>
+                </div>
+                <!-- right -->
+                <div
+                  class="flex h-full w-1/3 flex-col rounded-r-3xl bg-[#F78C9C] px-10 py-8"
+                >
+                  <div class="flex justify-center items-center flex-col h-full">
+                    <h1
+                      class="leading-[180%] text-[32px] font-bold whitespace-nowrap"
+                    >
+                      Couple 20
+                    </h1>
+                    <p class="text-lg font-medium leading-9 text-gray-600">
+                      Coupon Code
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </section>
+        <div class="grid items-center justify-center mt-14">
+          <div
+            class="btn btn-outline btn-outline-[#11dd100] raleway text-xl font-bold text-[#1DD100] hover:bg-green-500 hover:border-0 max-md:font-semibold max-md:text-lg"
+          >
+            See All Offers
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom js -->
+    <script src="script.js"></script>
   </body>
 </html>

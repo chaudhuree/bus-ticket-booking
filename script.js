@@ -125,7 +125,7 @@ function calculateTotalPrice() {
 
 // apply coupon
 function applyCoupon(e) {
-  e.preventDefault();
+  
   const couponCode = couponCodeEl.value.trim();
 
   if (couponCode === "Couple 20" || couponCode === "NEW15") {
@@ -157,9 +157,7 @@ function applyCoupon(e) {
 //   alert("Purchase done!");
 // }
 
-function handleForm(e) {
-  e.preventDefault();
-}
+
 // select seat
 function selectSeat(seatNumber) {
   const seatBtn = document.getElementById(`seat${seatNumber}`);

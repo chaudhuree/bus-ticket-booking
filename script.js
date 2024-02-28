@@ -146,15 +146,16 @@ function applyCoupon(e) {
     alert('Invalid coupon code. Please enter "Couple 20" or "NEW15".');
   }
 }
+nextBtn.addEventListener("click", function (e) {
+  e.preventDefault();
 
-// ticket purchase
+});
 // function purchase() {
 //   if (selectedSeats.length === 0) {
 //     alert("Please select at least one seat.");
 //     return;
 //   }
 
-//   alert("Purchase done!");
 // }
 
 
